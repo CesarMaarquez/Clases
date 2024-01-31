@@ -50,6 +50,51 @@ public class Agenda {
 		return false;
 	}
 	
+	//buscar un contacto, usando un nombre
+	public Contacto get(String nombre) {
+		for (Contacto contacto : listadeContactos) {
+			if (contacto.getNombre().equals(nombre)) {
+				return contacto;
+			}
+		}
+		return null;    //si no he encontrado ninguno, retorno nada
+	}
+	
+	//buscar un contacto, dada su posicion en la lista
+	public Contacto get(int posicion) {
+		return listadeContactos.get(posicion);
+	}
+	
+	//actualizar un contacto
+	public boolean update(String nombreAntiguo, String nombreNuevo) {
+		Contacto c=this.get(nombreAntiguo);
+		if (c!=null) {
+			c.setNombre(nombreNuevo);
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+//		for (Contacto contacto : listadeContactos) {
+//			if (contacto.getNombre().equals(nombreAntiguo)) {
+//				contacto.setNombre(nombreNuevo);
+//				return true;
+//			}
+//		}
+//		return false;
+//	}
+	
+	public void update(Contacto contactoViejo, Contacto contactoNuevo) {
+		this.delete(contactoViejo);
+		this.add(contactoNuevo);
+	}
+	
+	//método longitud
+	public int length() {
+		return this.listadeContactos.size();
+	}
+	
 	
 
 }

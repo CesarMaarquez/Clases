@@ -13,6 +13,14 @@ public class Prueba {
 		Agenda agenda=new Agenda();
 		
 		agenda.add(javier);
+		agenda.add(new Contacto("Laura",675647362));
+		
+		System.out.println(agenda);
+		
+		agenda.update("Laura", "Laurita");
+		
+		System.out.println(agenda);
+	
 		
 
 	}
