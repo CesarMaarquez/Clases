@@ -54,7 +54,7 @@ public class Factura {
 	@Override
 	public String toString() {
 		return "Factura [numero=" + numero + ", fecha=" + fecha + ", lineas=" + lineas + ", pagada=" + pagada + "]";
-	}
+	} 
 	
 	
 	
